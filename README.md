@@ -11,6 +11,7 @@ kemudian membuat endpoint API local dari hasil mengkonsumsi API External tersebu
 - npm install --save body-parser
 - npm install babel-cli --save
 - npm install request --save
+- node app.js
 
 
 Endpoint yg digunakan
