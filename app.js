@@ -13,10 +13,7 @@ require("isomorphic-fetch");
 
 
 
-
-
-
-app.post("/api/v1/add2", (req, res) => {
+app.post("/api/v1/addUser", (req, res) => {
         const access_token = "jix9nh0zvOQRSpPZj_83iW8B6SaU8Fj9m-J-";
         const options = {
               simple: false,
@@ -35,7 +32,7 @@ app.post("/api/v1/add2", (req, res) => {
                 res.status(200).send({
                   success: "true",
                   message:
-                    "method post new user to retrievedhttps://gorest.co.in/public-api/users ",
+                    "method post new user to retrieved https://gorest.co.in/public-api/users ",
                   data: response.result
                 });
       
@@ -47,7 +44,7 @@ app.post("/api/v1/add2", (req, res) => {
 
   
 
-app.get("/api/v1/todos", (req, res) => {
+app.get("/api/v1/getPeople", (req, res) => {
   
     let arr_dt = [];
     const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
