@@ -7,14 +7,13 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
 
 
 
 app.post("/api/v1/addUser", (req, res) => {
-        const access_token = "jix9nh0zvOQRSpPZj_83iW8B6SaU8Fj9m-J-";
+        const access_token = "ca70317598e7012805337589d701366c1fa97da8d5b842752041ad88b5886c3d";
         const options = {
               simple: false,
               method: "POST",
@@ -47,21 +46,21 @@ app.post("/api/v1/addUser", (req, res) => {
 app.get("/api/v1/getPeople", (req, res) => {
   
     let arr_dt = [];
-    const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
+    const fetchPromise = fetch("https://gorest.co.in/public-api/users");
     fetchPromise
       .then(response => {
         return response.json();
       })
       .then(function (dt) {
-
-      dt.forEach((val, i) => {
+        console.log('dt= ',dt.data);
+      dt.data.forEach((val, i) => {
             arr_dt.push(val);
          });
         
           res.status(200).send({
             success: "true",
             message:
-              "get data from https://ghibliapi.herokuapp.com/people successfully",
+              "get data successfully",
             data: arr_dt
           });
       })
